@@ -1,4 +1,5 @@
 import Component from '../Component.js';
+import Header from '../shared/Header.js';
 import { auth } from '../services/firebase.js';
 
 class AuthApp extends Component {
@@ -6,6 +7,9 @@ class AuthApp extends Component {
     render() {
         const dom = this.renderDOM();
 
+        const header = new Header({ title: 'Welcom to Chatty Kathy' });
+        const main = dom.querySelector('main');
+        dom.insertBefore(header.render(), main);
 
         const ui = new firebaseui.auth.AuthUI(auth);
 
