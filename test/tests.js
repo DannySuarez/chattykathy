@@ -1,2 +1,3 @@
 import './html-equal.js';
-// import './Profile.test.js';
+import './query-string-parser.test.js';
+import './Profile.test.js';
