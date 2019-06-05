@@ -12,10 +12,14 @@ class AddRoom extends Component {
             const userChatRef = chatsRef.push();
             const formData = new FormData(form);
 
-            userChatRef.set({
+            const room = {
                 id: userChatRef.key,
                 owner: auth.currentUser.uid,
                 title: formData.get('room')
+            };
+
+            userChatRef.set(room).then(() => {
+                form.reset();
             });
 
         });
