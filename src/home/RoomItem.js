@@ -6,7 +6,7 @@ class RoomItem extends Component {
 
         return /*html*/`
         <li class="chat-room">
-            <h2>${chats.title}</h2>
+            <p>${chats.title}</p>
         </li>
         `;
     }
