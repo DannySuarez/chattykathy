@@ -19,7 +19,7 @@ class App extends Component {
             roomList.update({ chats });
         });
 
-        const roomList = new RoomList();
+        const roomList = new RoomList({ chats: [] });
         main.appendChild(roomList.render());
 
         return dom;
