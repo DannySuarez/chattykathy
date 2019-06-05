@@ -7,7 +7,7 @@ class RoomList extends Component {
         const list = this.renderDOM();
         
         chats.forEach(chat => {
-            const roomItem = new RoomItem({ chats: chat });
+            const roomItem = new RoomItem({ chat });
             list.appendChild(roomItem.render());
         });
 
