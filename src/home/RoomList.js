@@ -3,10 +3,13 @@ import RoomItem from './RoomItem.js';
 
 class RoomList extends Component {
     render() {
+        const chats = this.props.chats;
         const list = this.renderDOM();
         
-        const roomItem = new RoomItem();
-        list.appendChild(roomItem.render());
+        chats.forEach(chat => {
+            const roomItem = new RoomItem({ chats: chat });
+            list.appendChild(roomItem.render());
+        });
 
         return list;
     }
@@ -19,5 +22,3 @@ class RoomList extends Component {
     }
 }
 export default RoomList;
-//bring in props
-//foreach on chats props
