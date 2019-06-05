@@ -9,6 +9,7 @@ class App extends Component {
 
         const header = new Header();
         const headerDOM = header.render();
+        
         const main = dom.querySelector('main');
         dom.insertBefore(headerDOM, main);
 
