@@ -1,5 +1,6 @@
 import Component from '../Component.js';
 import Profile from './Profile.js';
+import AddRoom from '../home/AddRoom.js';
 import { auth } from '../services/firebase.js';
 
 class Header extends Component {
@@ -8,6 +9,10 @@ class Header extends Component {
 
         const profile = new Profile();
         dom.appendChild(profile.render());
+
+        const addRoom = new AddRoom();
+        const addRoomDOM = addRoom.render();
+        dom.appendChild(addRoomDOM);
 
         auth.onAuthStateChanged(user => {
             profile.update({ user });
