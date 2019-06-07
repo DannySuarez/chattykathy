@@ -39,6 +39,3 @@ class App extends Component {
     }
 }
 export default App;
-
-//import firebasejs
-//
