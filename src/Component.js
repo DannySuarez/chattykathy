@@ -6,10 +6,6 @@ class Component {
         this.state = {};
     }
 
-    unrender() {
-       // no-op
-    }
-
     render() {
         return this.renderDOM();
     }
@@ -17,8 +13,8 @@ class Component {
     renderDOM() {
         const html = this.renderTemplate();
         const dom = htmlToDOM(html);
-       // remember the dom for later
-       // for replacing or removing
+        // remember the dom for later
+        // for replacing or removing
         this.rootElement = dom;
         return dom;
     }
@@ -29,11 +25,15 @@ class Component {
 
     update(props) {
         props = props || {};
-       // update the props:
+        // update the props:
         Object.assign(this.props, props);
-
+        
         const oldRoot = this.rootElement;
-        this.unrender();
+        
+        if(!oldRoot) {
+            throw new Error(`"update()" was called on Component "${this.constructor.name}", but no prior render has happened. Be sure to call ".render()" before using ".update()"`);
+        }
+
         const newDOM = this.render();
         oldRoot.replaceWith(newDOM);
     }
