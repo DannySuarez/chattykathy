@@ -1,0 +1,13 @@
+#button {
+    margin-left: 1;
+    background-color: lightslategray;
+    border: none;
+    cursor: pointer;
+}
+.disabled {
+    pointer-events: none;
+    opacity: 0;
+}
+.chats {
+    list-style-type: none;
+}
