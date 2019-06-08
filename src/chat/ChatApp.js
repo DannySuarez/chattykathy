@@ -9,10 +9,10 @@ class ChatApp extends Component {
         const main = dom.querySelector('main');
         
         const header = new Header();
-        dom.insertBefore(header.render(), main);
+        dom.appendChild(header.render(), main);
 
         const addMessage = new AddMessage();
-        dom.insertBefore(addMessage.render(), main);
+        dom.appendChild(addMessage.render());
 
         return dom;
     }
