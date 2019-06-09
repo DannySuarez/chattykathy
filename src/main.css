@@ -1,0 +1,15 @@
+body {
+    background-color: lightslategray;
+}
+
+h1 {
+    text-align: center;
+}
+
+.profile {
+    text-align: center;
+}
+
+img {
+    border-radius: 100%;
+}

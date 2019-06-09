@@ -8,8 +8,9 @@ const config = {
     appId: '1:538467577608:web:8339b5f497547ef7'
 };
 
-firebase.initializeApp(config);
+export const app = firebase.initializeApp(config);
 
 export const auth = firebase.auth();
-
 export const db = firebase.database();
+export const chatsRef = db.ref('chatrooms');
+export const messageRef = db.ref('message');
